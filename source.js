@@ -3,6 +3,7 @@ const  b = { qtdMostra:0, acertos:1, especiais:2, TempoMole :3 },
 	sinais = 	[" + "," - "," x "," ÷ "],
 	oper = 		[" + "," - "," * "," / "],
 	txt = document.querySelector(".subtext"),
+	btneg = document.getElementById( 'btneg' ),
 	box = document.getElementById( 'texto1' ),
 	bt1 = document.getElementById( 'bt1' ),
 	auto = document.getElementById( 'auto' ),
@@ -34,7 +35,9 @@ interface.teclas = (e)=>{
 	else if (e.key == " " ) {response(result ); } //debug
 }
 
+btneg.onclick = ()=>{ box.value= parseInt(box.value)*-1 }
 box.oninput = ()=>{
+	btneg.disabled = box.value.length==0;
 	if (box.value.length == (result+"").length){
 		bt1.disabled = false;
 		if (auto.checked){response(box.value)}
