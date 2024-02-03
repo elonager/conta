@@ -11,11 +11,11 @@ const  b = { qtdMostra:0, acertos:1, especiais:2, TempoMole :3 },
 interface = {};	
 interface.acertou = ()=>{
 	console.log("ACERTOU", A,sinal,B,"=",result, "| indice:", indice);
-	fase.innerText += "ACERTOU";
+	fase.innerHTML = "ACERTOU";
 }
 interface.errou = ()=>{
 	console.log(answer, "ERROU", result)	;
-	fase.innerText += "ERROU";
+	fase.innerHTML = "ERROU";
 }
 interface.question = (quest)=>{
 	txt.textContent = quest;
@@ -23,7 +23,7 @@ interface.question = (quest)=>{
 }
 interface.xpUp =(xp)=>{
 
-	fase.innerText = "Level = "+stats.level +"; XP = "+ stats.exp+";"
+	fase.innerHTML = "Level = "+stats.level +";<br> XP = "+ stats.exp+" de "+ (((stats.level+1)*44)+1+((stats.level+1)**4)) + ";<br>+"+xp
 
 	console.log("ganhou ",xp,"de experiência!! \ntotal:", stats.exp,
 				"tamanho da lista = ", listQuestions.length,	 "\n falta:", 
