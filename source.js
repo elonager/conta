@@ -35,7 +35,7 @@ interface.teclas = (e)=>{
 	else if (e.key == " " ) {response(result ); } //debug
 }
 
-bt1.onclick = response(box.value)
+//bt1.onclick = (box.value)=>response(box.value)
 btneg.onclick = ()=>{ box.value= parseInt(box.value)*-1 }
 box.oninput = ()=>{
 	btneg.disabled = box.value.length==0;
