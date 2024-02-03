@@ -73,7 +73,7 @@ function response(answer=""){
 			/ (stats.totalContas + 1);
 	stats.totalContas++
 
-	if (answer == result){ interface.acertou()
+	if (parseInt(answer) == result){ interface.acertou()
 		stats.boletim[indice][b.TempoMole] =
 			stats.boletim[indice][b.TempoMole]==0 	? 	deltaT	:
 			( stats.boletim[indice][b.TempoMole] + deltaT ) / 2 ;
