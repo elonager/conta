@@ -37,6 +37,7 @@ interface.teclas = (e)=>{
 
 bt1.onclick = () => response(box.value)
 btneg.onclick = ()=>{ box.value= parseInt(box.value)*-1 }
+
 box.oninput = ()=>{
 	btneg.disabled = box.value.length==0;
 	if (box.value.length == (result+"").length){
