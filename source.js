@@ -2,7 +2,8 @@ const  b = { qtdMostra:0, acertos:1, especiais:2, TempoMole :3 },
 	maxIndice = 439,		vazio = "_",	
 	sinais = 	[" + "," - "," x "," ÷ "],
 	oper = 		[" + "," - "," * "," / "],
-	txt = document.querySelector(".subtext"),
+	txt = document.getElementById("conta"),
+	fase = document.getElementById("levels"),
 	btneg = document.getElementById( 'btneg' ),
 	box = document.getElementById( 'texto1' ),
 	bt1 = document.getElementById( 'bt1' ),
@@ -10,15 +11,20 @@ const  b = { qtdMostra:0, acertos:1, especiais:2, TempoMole :3 },
 interface = {};	
 interface.acertou = ()=>{
 	console.log("ACERTOU", A,sinal,B,"=",result, "| indice:", indice);
+	fase.innerText += "ACERTOU";
 }
 interface.errou = ()=>{
 	console.log(answer, "ERROU", result)	;
+	fase.innerText += "ERROU";
 }
 interface.question = (quest)=>{
 	txt.textContent = quest;
 	box.value= "";
 }
 interface.xpUp =(xp)=>{
+
+	fase.innerText = "Level = "+stats.level +"; XP = "+ stats.exp+";"
+
 	console.log("ganhou ",xp,"de experiência!! \ntotal:", stats.exp,
 				"tamanho da lista = ", listQuestions.length,	 "\n falta:", 
 				(((stats.level+1)*44)+1+((stats.level+1)**4)) - stats.exp, "para o próximo level")
@@ -36,8 +42,7 @@ interface.teclas = (e)=>{
 }
 
 bt1.onclick = () => response(box.value)
-btneg.onclick = ()=>{ box.value= parseInt(box.value)*-1 }
-
+btneg.onclick = ()=>{ box.value= box.value==''? box.value+'-' :((parseInt(box.value)*-1)+""); box.oninput () }
 box.oninput = ()=>{
 	btneg.disabled = box.value.length==0;
 	if (box.value.length == (result+"").length){
