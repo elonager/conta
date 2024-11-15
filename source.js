@@ -1,4 +1,4 @@
-console.log("versão com A !=0  ou B == 0 no teste")
+console.log("versão ZERO não inverte")
 const  b = { qtdMostra:0, acertos:1, especiais:2, TempoMole :3 },
 	maxIndice = 439,		vazio = "_",	
 	sinais = 	[" + "," - "," x "," ÷ "],
@@ -193,7 +193,8 @@ function nextQuestion(){
 	B = Math.floor ( indice / 44 ) +1; 
 		if (x%2==1){ A = B * ( 10 - A )}else{ // '/ou-'  ELSE ordem dos fatores não altera o resultado  
 			if (x==0) { A = A * B }
-			if ( rand < 0.5 && stats.acertoUltima) { C = A; A = B; B = C } 
+			if ( rand < 0.5 && stats.acertoUltima &&A!=0 && B!=0)) { 
+				C = A; A = B; B = C } 
 		}	// inverte A e B
 	C = eval( A + oper[x] + B )	
 
