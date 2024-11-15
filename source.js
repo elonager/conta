@@ -1,4 +1,4 @@
-console.log("versão com A ou B == 0 no teste")
+console.log("versão com A !=0  ou B == 0 no teste")
 const  b = { qtdMostra:0, acertos:1, especiais:2, TempoMole :3 },
 	maxIndice = 439,		vazio = "_",	
 	sinais = 	[" + "," - "," x "," ÷ "],
@@ -208,7 +208,7 @@ function nextQuestion(){
 					
 	if(	!stats.acertoUltima || stats.seguidas==0 ||
 		( stats.boletim[indice]	&& rand > limiar )) {
-		if(stats.totalContas%2 == 0 || A==0 || B==0)
+		if(stats.totalContas%2 == 0 || A!=0 || B==0)
 		{
 			result = A;	A = vazio.repeat((A+"").length);
 		}else{
