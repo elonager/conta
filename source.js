@@ -1,3 +1,4 @@
+console.log("versão com A ou B == 0 no teste")
 const  b = { qtdMostra:0, acertos:1, especiais:2, TempoMole :3 },
 	maxIndice = 439,		vazio = "_",	
 	sinais = 	[" + "," - "," x "," ÷ "],
