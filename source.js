@@ -81,6 +81,7 @@ function response(answer=""){
 	stats.tempMedio = 
 		((stats.tempMedio*stats.totalContas)+deltaT) 
 			/ (stats.totalContas + 1);
+	
 	stats.totalContas++
 
 	if (parseInt(answer) == result){ interface.acertou()
@@ -206,7 +207,7 @@ function nextQuestion(){
 					
 	if(	!stats.acertoUltima || stats.seguidas==0 ||
 		( stats.boletim[indice]	&& rand > limiar )) {
-		if(stats.totalContas%2 == 0 || A==0)
+		if(stats.totalContas%2 == 0 || A==0 || B==0)
 		{
 			result = A;	A = vazio.repeat((A+"").length);
 		}else{
